@@ -1,0 +1,40 @@
+[
+  {
+    "id": "lore-source",
+    "prompt": "¿Quién protege el Archivo de Cristal? Cita [1]. Contexto: la Orden del Faro protege el Archivo.",
+    "rules": {
+      "contains_all": [
+        "Orden del Faro",
+        "[1]"
+      ],
+      "forbidden_any": [
+        "Orden de las Sombras"
+      ],
+      "max_chars": 200
+    }
+  },
+  {
+    "id": "unknown-fact",
+    "prompt": "¿Qué edad tiene Nara? El contexto no indica su edad. Di que no hay evidencia.",
+    "rules": {
+      "contains_all": [
+        "No hay evidencia"
+      ],
+      "forbidden_any": [
+        "tiene 30 años"
+      ],
+      "max_chars": 160
+    }
+  },
+  {
+    "id": "structured-answer",
+    "prompt": "Devuelve JSON con las claves answer y sources.",
+    "rules": {
+      "json_keys": [
+        "answer",
+        "sources"
+      ],
+      "max_chars": 300
+    }
+  }
+]
